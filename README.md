@@ -31,6 +31,10 @@ The plugin specs are located in the `lua/plugins/` directory, separated into fil
 
 - [`neo-tree.nvim`](https://github.com/nvim-neo-tree/neo-tree.nvim): file system browsing
 
+### Coding-Related Things
+
+- [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
+
 ### UI-Related Things 
 
 - [`catppuccin/nvim`](https://github.com/catppuccin/nvim): color scheme
