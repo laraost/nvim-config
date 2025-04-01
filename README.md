@@ -21,10 +21,11 @@ The plugin specs are located in the `lua/plugins/` directory, separated into fil
 
 [Key mappings](#key-mapping) are defined in `lua/config/keys.lua`, apart from `leader` and `localleader`.
 
-| File                    | Section                                     |
-|-------------------------|---------------------------------------------|
-| `lua/plugins/files.lua` | [File-Related Things](#file-related-things) |
-| `lua/plugins/ui.lua`    | [UI-Related Things](#ui-related-things)     |
+| File                          | Section                                     |
+|-------------------------------|---------------------------------------------|
+| `lua/plugins/files.lua`       | [File-Related Things](#file-related-things) |
+| `lua/plugins/ui.lua`          | [UI-Related Things](#ui-related-things)     |
+| `lua/plugins/sessions.lua`    | [Sessions](#sessions)                       |
 
 ### File-Related Things
 
@@ -36,6 +37,10 @@ The plugin specs are located in the `lua/plugins/` directory, separated into fil
 - [`which-key.nvim`](https://github.com/folke/which-key.nvim): show available key mappings
 - [`nvim-cokeline`](https://github.com/willothy/nvim-cokeline): buffer line
 
+### Sessions
+
+- [`auto-sessions`](https://github.com/rmagatti/auto-session): session management. Sessions are per directory and branch. Restore on startup is disabled.
+
 ## Key Mapping
 
 `leader` is space, `localleader` is backslash.
@@ -43,21 +48,26 @@ The plugin specs are located in the `lua/plugins/` directory, separated into fil
 In normal mode:
 | `lhs`         | Action/Note                                     | Plugin        |
 |---------------|-------------------------------------------------|---------------|
+|               | *Buffer management*                             |               |
 | `<Leader>c`   | Close the focused buffer/file                   |               |
-| `<Leader>b`   | *Buffer management*                             |               |
 | `<Leader>bp`  | Go to previous buffer (left in the buffer line) |               |
 | `<Leader>bn`  | Go to next buffer (right in the buffer line)    |               |
 | `<Leader>b#`  | Go to last open buffer                          |               |
-| `<Leader>w`   | *Window management*                             |               |
+|               | *Window management*                             |               |
 | `<Leader>wh`  | Go to the left window                           |               |
 | `<Leader>wj`  | Go to the down window                           |               |
 | `<Leader>wk`  | Go to the up window                             |               |
 | `<Leader>wl`  | Go to the right window                          |               |
 | `<Leader>ws`  | Split window horizontally                       |               |
 | `<Leader>wv`  | Split window vertically                         |               |
-| `<Leader>f`   | *File browsing*                                 | [`files.lua`](#file-related-things) |
+|               | *File browsing*                                 | [`files.lua`](#file-related-things) |
 | `<Leader>fo`  | Toggle file system browser                      | neo-tree.nvim |
 | `<Leader>fe`  | Focus file system browser                       | neo-tree.nvim |
+|               | *Sessions*                                      | [`sessions.lua`](#sessions) |
+| `<Leader>S`   | Restore previous session for this directory     | auto-session  |
+| `<Leader>sd`  | Delete the session for this directory           | auto-session  |
+| `<Leader>ss`  | Load a session from a list                      | auto-session  |
+| `<Leader>sx`  | Delete a session from a list                    | auto-session  |
 
 ## Possible Improvements
 
