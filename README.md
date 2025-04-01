@@ -50,8 +50,8 @@ In normal mode:
 |---------------|-------------------------------------------------|---------------|
 |               | *Buffer management*                             |               |
 | `<Leader>c`   | Close the focused buffer/file                   |               |
-| `<Leader>bp`  | Go to previous buffer (left in the buffer line) |               |
-| `<Leader>bn`  | Go to next buffer (right in the buffer line)    |               |
+| `<Leader>bh`  | Go to previous buffer (left in the buffer line) |               |
+| `<Leader>bl`  | Go to next buffer (right in the buffer line)    |               |
 | `<Leader>b#`  | Go to last open buffer                          |               |
 |               | *Window management*                             |               |
 | `<Leader>wh`  | Go to the left window                           |               |

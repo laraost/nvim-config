@@ -2,9 +2,9 @@
 vim.keymap.set("n", "<Leader>c", "<cmd>b#|bd#<cr>",
     {desc = "Close buffer"})
 -- Navigate in buffers; alternatives to `:bp`, `:bn` and the like
-vim.keymap.set("n", "<Leader>bp", "<cmd>bp<cr>",
+vim.keymap.set("n", "<Leader>bh", "<cmd>bp<cr>",
     {desc = "Go to previous buffer"})
-vim.keymap.set("n", "<Leader>bn", "<cmd>bn<cr>",
+vim.keymap.set("n", "<Leader>bl", "<cmd>bn<cr>",
     {desc = "Go to next buffer"})
 vim.keymap.set("n", "<Leader>b#", "<cmd>b#<cr>",
     {desc = "Go to last open buffer"})
@@ -18,7 +18,10 @@ vim.keymap.set("n", "<Leader>wj", "<C-w>j",
 vim.keymap.set("n", "<Leader>wk", "<C-w>k",
     { remap = true, desc = "Go to the up window"})
 -- Split windows; alternatives to `<C-w>s` and `<C-w>v`
-vim.keymap.set("n", "<Leader>ws", "<C-w>s",
-    { remap = true, desc = "Split window horizontally"})
-vim.keymap.set("n", "<Leader>wv", "<C-w>v",
-    { remap = true, desc = "Split window vertically"})
+vim.keymap.set("n", "<Leader>ws", "<cmd>split<cr>", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<Leader>wv", "<cmd>vsplit<cr>", { desc = "Split window vertically" })
+-- Resizing windows; alternatives to `<C-w><gt>` etc.
+vim.keymap.set("n", "<C-Right>", "<cmd>vert res +1<cr>", { desc = "Increase width" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vert res -1<cr>", { desc = "Decrease width" })
+vim.keymap.set("n", "<C-Up>", "<cmd>resize +1<cr>", { desc = "Increase height" })
+vim.keymap.set("n", "<C-Down>", "<cmd>resize -1<cr>", { desc = "Decrease height" })
