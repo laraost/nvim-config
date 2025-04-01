@@ -55,10 +55,10 @@ In normal mode:
 | `<Leader>bl`  | Go to next buffer (right in the buffer line)    |               |
 | `<Leader>b#`  | Go to last open buffer                          |               |
 |               | *Window management*                             |               |
-| `<Leader>wh`  | Go to the left window                           |               |
-| `<Leader>wj`  | Go to the down window                           |               |
-| `<Leader>wk`  | Go to the up window                             |               |
-| `<Leader>wl`  | Go to the right window                          |               |
+| `<C-h>`       | Go to the left window                           |               |
+| `<C-j>`       | Go to the down window                           |               |
+| `<C-k>`       | Go to the up window                             |               |
+| `<C-l>`       | Go to the right window                          |               |
 | `<Leader>ws`  | Split window horizontally                       |               |
 | `<Leader>wv`  | Split window vertically                         |               |
 |               | *File browsing*                                 | [`files.lua`](#file-related-things) |
