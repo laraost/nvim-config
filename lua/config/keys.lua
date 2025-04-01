@@ -1,6 +1,8 @@
 -- Close the currently focused buffer
 vim.keymap.set("n", "<Leader>c", "<cmd>b#|bd#<cr>",
     {desc = "Close buffer"})
+vim.keymap.set("n", "<Leader>C", "<cmd>b#|bd!#<cr>",
+    {desc = "Close buffer without saving"})
 -- Navigate in buffers; alternatives to `:bp`, `:bn` and the like
 vim.keymap.set("n", "<Leader>bh", "<cmd>bp<cr>",
     {desc = "Go to previous buffer"})
