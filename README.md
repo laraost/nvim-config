@@ -73,6 +73,11 @@ In normal mode:
 | `<Leader>sd`  | Delete the session for this directory           | auto-session  |
 | `<Leader>ss`  | Load a session from a list                      | auto-session  |
 | `<Leader>sx`  | Delete a session from a list                    | auto-session  |
+|               |                                                 | [`code.lua`](#coding-related-things) |                |
+| `gnn`         | Initialize incremental selection                | nvim-treesitter |
+| `grn`         | Increment selection to node                     | nvim-treesitter |
+| `grc`         | Increment selection to surrounding scope        | nvim-treesitter |
+| `grm`         | Shrink selection to node                        | nvim-treesitter |
 
 ## Possible Improvements
 

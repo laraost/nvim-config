@@ -6,9 +6,18 @@ return {
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = { "c", "cpp", "lua", "rust", "python" },
+                ensure_installed = { "c", "cpp", "lua", "rust", "python", "meson" },
                 highlight = { enable = true },
                 indent = { enable = true },
+                incremental_selection = {
+                    enable = true,
+                    keymaps = {
+                        init_selection = "gnn",
+                        node_incremental = "grn",
+                        scope_incremental = "grc",
+                        node_decremental = "grm",
+                    },
+                },
             })
         end
     },
