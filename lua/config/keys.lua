@@ -9,14 +9,10 @@ vim.keymap.set("n", "<Leader>bl", "<cmd>bn<cr>",
 vim.keymap.set("n", "<Leader>b#", "<cmd>b#<cr>",
     {desc = "Go to last open buffer"})
 -- Navigate through windows; alternatives to `<C-w>h` etc.
-vim.keymap.set("n", "<Leader>wh", "<C-w>h",
-    { remap = true, desc = "Go to the left window"})
-vim.keymap.set("n", "<Leader>wl", "<C-w>l",
-    { remap = true, desc = "Go to the right window"})
-vim.keymap.set("n", "<Leader>wj", "<C-w>j",
-    { remap = true, desc = "Go to the down window"})
-vim.keymap.set("n", "<Leader>wk", "<C-w>k",
-    { remap = true, desc = "Go to the up window"})
+vim.keymap.set("n", "<Leader>wh", "<cmd>wincmd h<cr>", { desc = "Go to the left window" })
+vim.keymap.set("n", "<Leader>wl", "<cmd>wincmd l<cr>", { desc = "Go to the right window" })
+vim.keymap.set("n", "<Leader>wj", "<cmd>wincmd j<cr>", { desc = "Go to the down window" })
+vim.keymap.set("n", "<Leader>wk", "<cmd>wincmd k<cr>", { desc = "Go to the up window" })
 -- Split windows; alternatives to `<C-w>s` and `<C-w>v`
 vim.keymap.set("n", "<Leader>ws", "<cmd>split<cr>", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<Leader>wv", "<cmd>vsplit<cr>", { desc = "Split window vertically" })
