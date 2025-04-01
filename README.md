@@ -72,4 +72,4 @@ In normal mode:
 
 ## Possible Improvements
 
-- [] If, after `<Leader>c`, only one file is open, splits are closed. This feels strange.
+- [ ] If, after `<Leader>c`, only one file is open, splits are closed. This feels strange.
