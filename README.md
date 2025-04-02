@@ -9,6 +9,7 @@ nvim
 | +-config
 | | +-keys.lua
 | | +-lazy.lua
+| | +-lsp.lua
 | | +-options.lua
 | +-plugins
 |   +-files.lua
@@ -22,11 +23,12 @@ The plugin specs are located in the `lua/plugins/` directory, separated into fil
 
 [Key mappings](#key-mapping) are defined in `lua/config/keys.lua`, apart from `leader` and `localleader`.
 
-| File                          | Section                                     |
-|-------------------------------|---------------------------------------------|
-| `lua/plugins/files.lua`       | [File-Related Things](#file-related-things) |
-| `lua/plugins/ui.lua`          | [UI-Related Things](#ui-related-things)     |
-| `lua/plugins/sessions.lua`    | [Sessions](#sessions)                       |
+| File                          | Section                                         |
+|-------------------------------|-------------------------------------------------|
+| `lua/plugins/files.lua`       | [File-Related Things](#file-related-things)     |
+| `lua/plugins/code.lua`        | [Coding-Related Things](#coding-related-things) |
+| `lua/plugins/ui.lua`          | [UI-Related Things](#ui-related-things)         |
+| `lua/plugins/sessions.lua`    | [Sessions](#sessions)                           |
 
 ### File-Related Things
 
@@ -35,6 +37,9 @@ The plugin specs are located in the `lua/plugins/` directory, separated into fil
 ### Coding-Related Things
 
 - [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
+- [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
+
+Setup for LSPs is in `lua/config/lsp.lua` and is not automated.
 
 ### UI-Related Things 
 
