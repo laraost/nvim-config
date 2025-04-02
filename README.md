@@ -9,6 +9,7 @@ nvim
 | +-config
 | | +-keys.lua
 | | +-lazy.lua
+| | +-options.lua
 | +-plugins
 |   +-files.lua
 |   +-ui.lua
