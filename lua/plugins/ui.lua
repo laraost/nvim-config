@@ -5,7 +5,11 @@ return {
         name = "catppuccin",
         priority = 1000,
         opts = {
-            flavour = "auto"
+            flavour = "auto",
+            background = {
+                light = "latte",
+                dark = "frappe"
+            },
         }
     },
     -- Show available key mappings
