@@ -1,15 +1,10 @@
 -- Close the currently focused buffer
-vim.keymap.set("n", "<Leader>c", "<cmd>b#|bd#<cr>",
-    {desc = "Close buffer"})
-vim.keymap.set("n", "<Leader>C", "<cmd>b#|bd!#<cr>",
-    {desc = "Close buffer without saving"})
+vim.keymap.set("n", "<Leader>c", "<cmd>b#|bd#<cr>", {desc = "Close buffer"})
+vim.keymap.set("n", "<Leader>C", "<cmd>b#|bd!#<cr>", {desc = "Close buffer without saving"})
 -- Navigate in buffers; alternatives to `:bp`, `:bn` and the like
-vim.keymap.set("n", "<Leader>bh", "<cmd>bp<cr>",
-    {desc = "Go to previous buffer"})
-vim.keymap.set("n", "<Leader>bl", "<cmd>bn<cr>",
-    {desc = "Go to next buffer"})
-vim.keymap.set("n", "<Leader>b#", "<cmd>b#<cr>",
-    {desc = "Go to last open buffer"})
+vim.keymap.set("n", "<Leader>bh", "<cmd>bp<cr>", {desc = "Go to previous buffer"})
+vim.keymap.set("n", "<Leader>bl", "<cmd>bn<cr>", {desc = "Go to next buffer"})
+vim.keymap.set("n", "<Leader>b#", "<cmd>b#<cr>", {desc = "Go to last open buffer"})
 -- Navigate through windows; alternatives to `<C-w>h` etc.
 vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to the left window" })
 vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to the right window" })
@@ -23,3 +18,5 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vert res +1<cr>", { desc = "Increase widt
 vim.keymap.set("n", "<C-Left>", "<cmd>vert res -1<cr>", { desc = "Decrease width" })
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +1<cr>", { desc = "Increase height" })
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -1<cr>", { desc = "Decrease height" })
+-- Search
+vim.keymap.set("n", "<Leader>/", "<cmd>noh<cr>", { desc = "Clear search highlighting" })

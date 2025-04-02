@@ -30,3 +30,6 @@ vim.api.nvim_create_autocmd(
     }
 )
 
+-- Copying to clipboard
+vim.cmd.set("clipboard=unnamed,unnamedplus")
+

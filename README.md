@@ -58,6 +58,7 @@ Setup for LSPs is in `lua/config/lsp.lua` and is not automated.
 In normal mode:
 | `lhs`         | Action/Note                                     | Plugin        |
 |---------------|-------------------------------------------------|---------------|
+| `<Leader>/`   | Disable highlights of last search               |               |
 |               | *Buffer management*                             |               |
 | `<Leader>c`   | Close the focused buffer/file                   |               |
 | `<Leader>C`   | Close the focused buffer/file without saving    |               |
