@@ -82,3 +82,4 @@ In normal mode:
 ## Possible Improvements
 
 - [ ] If, after `<Leader>c`, only one file is open, splits are closed. This feels strange.
+- [ ] Use something like [auto-dark-mode](https://github.com/f-person/auto-dark-mode.nvim) to switch light/dark based on system settings.

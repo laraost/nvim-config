@@ -14,3 +14,4 @@ require("config.keys")
 require("config.lazy")
 
 vim.cmd.colorscheme("catppuccin")
+vim.cmd.set("background=light")
