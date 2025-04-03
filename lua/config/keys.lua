@@ -6,8 +6,48 @@ vim.keymap.set(
     { desc = "Toggle light/dark mode" }
 )
 -- Close the currently focused buffer
-vim.keymap.set("n", "<Leader>c", "<cmd>b#|bd#<cr>", {desc = "Close buffer"})
-vim.keymap.set("n", "<Leader>C", "<cmd>b#|bd!#<cr>", {desc = "Close buffer without saving"})
+-- First, we need a function to get the relevant buffers
+local close_mapping = "<Leader>c"
+local force_close_mapping = "<Leader>C"
+local get_listed_bufs = function()
+    return vim.tbl_filter(function(bufnr)
+       return vim.api.nvim_buf_get_option(bufnr, "buflisted")
+    end, vim.api.nvim_list_bufs())
+end
+--- Close the currently focused buffer.
+-- Prints an error and stops if force is false and the buffer has been modified.
+-- Otherwise, switches to the previous buffer in cokeline and closes this one.
+-- If the buffer to close is the only "listed" buffer (the only one that shows up with `:ls`),
+-- then a new empty buffer is opened instead.
+-- @param force also close a buffer if it has been modified
+local close_buffer = function(force)
+    force = force or false
+    if not force and vim.o.mod then
+        vim.notify("No write since last change (consider using `<Leader>C` instead)", vim.log.levels.ERROR)
+        return
+    end
+    local delete_buf
+    if force then
+            delete_buf = function() vim.cmd.bdelete("!#") end
+    else
+            delete_buf = function() vim.cmd.bdelete("#") end
+    end
+    local cokeline = require("cokeline.mappings")
+    if #get_listed_bufs() == 1 then
+        -- There is only one buffer to close, so make a new one first.
+        local current_buffer = vim.api.nvim_win_get_buf(0)
+        vim.cmd.enew()
+        if vim.api.nvim_win_get_buf(0) ~= current_buffer then
+            vim.cmd.bdelete("#")
+        end
+    else
+        -- Focus the previous buffer in the bufferline, then delete.
+        cokeline.by_step("focus", -1)
+        vim.cmd.bdelete("#")
+    end
+end
+vim.keymap.set("n", close_mapping, function() close_buffer(false) end, {desc = "Close buffer"})
+vim.keymap.set("n", force_close_mapping, function() close_buffer(true) end, {desc = "Close buffer without saving"})
 -- Navigate in buffers; alternatives to `:bp`, `:bn` and the like
 vim.keymap.set("n", "<Leader>bh", "<cmd>bp<cr>", {desc = "Go to previous buffer"})
 vim.keymap.set("n", "<Leader>bl", "<cmd>bn<cr>", {desc = "Go to next buffer"})

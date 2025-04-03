@@ -98,10 +98,17 @@ In normal mode:
 | `grc`           | Increment selection to surrounding scope          | nvim-treesitter |
 | `grm`           | Shrink selection to node                          | nvim-treesitter |
 
+## Notes
+
+The mappings `<Leader>c` and `<Leader>C` close the currently focused buffer.
+If there is only one "listed" buffer (those shown in the buffer line, which should be those listed by ":ls"),
+then a new empty buffer is created.
+The functionality around these mappings might not interact well with the (Neo)Vim's native tabpages. Better not use them with this config...
+
 ## Possible Improvements and Other To-Dos
 
-- [ ] If, after `<Leader>c`, only one file is open, splits are closed. This feels strange.
-- [ ] `<Leader>c` is bugged if the last open buffer was also closed.
 - [ ] Document LSP key mappings.
 - [ ] LSP related windows have no border. Maybe in general hovering windows could use a border.
 - [ ] Use something like [auto-dark-mode](https://github.com/f-person/auto-dark-mode.nvim) to switch light/dark based on system settings.
+- [ ] (Neo)Vim's builtin tabs don't work well with this setup. They feel somewhat janky in combination with `<Leader>c`.
+- [ ] When the focused buffer is open in multiple windows, using `<Leader>c`/`<Leader>C` closes those windows. This is very inelegant and annoying.
