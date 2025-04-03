@@ -66,9 +66,9 @@ In normal mode:
 |                 | *Buffer management*                               |               |
 | `<Leader>c`     | Close the focused buffer/file                     |               |
 | `<Leader>C`     | Close the focused buffer/file without saving      |               |
-| `<Leader>bh`    | Go to previous buffer (left in the buffer line)   |               |
-| `<Leader>bl`    | Go to next buffer (right in the buffer line)      |               |
-| `<Leader>b#`    | Go to last open buffer                            |               |
+| `<Leader>h`     | Go to previous buffer (left in the buffer line)   |               |
+| `<Leader>l`     | Go to next buffer (right in the buffer line)      |               |
+| `<Leader>#`     | Go to last open buffer                            |               |
 |                 | *Window management*                               |               |
 | `<C-h>`         | Go to the left window                             |               |
 | `<C-j>`         | Go to the down window                             |               |
