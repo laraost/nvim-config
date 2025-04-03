@@ -1,3 +1,10 @@
+-- Toggle light/dark
+vim.keymap.set(
+    "n",
+    "<Leader>D",
+    "<cmd>if &background ==# 'dark' | set background=light | else | set background=dark | endif<cr>",
+    { desc = "Toggle light/dark mode" }
+)
 -- Close the currently focused buffer
 vim.keymap.set("n", "<Leader>c", "<cmd>b#|bd#<cr>", {desc = "Close buffer"})
 vim.keymap.set("n", "<Leader>C", "<cmd>b#|bd!#<cr>", {desc = "Close buffer without saving"})

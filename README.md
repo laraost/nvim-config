@@ -33,6 +33,7 @@ The plugin specs are located in the `lua/plugins/` directory, separated into fil
 ### File-Related Things
 
 - [`neo-tree.nvim`](https://github.com/nvim-neo-tree/neo-tree.nvim): file system browsing
+- [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim): search (in) files. Requires [`ripgrep`](https://github.com/BurntSushi/ripgrep) for live search. Does not search in files ignored via `.gitignore`.
 
 ### Coding-Related Things
 
@@ -58,39 +59,42 @@ Setup for LSPs is in `lua/config/lsp.lua` and is not automated.
 `leader` is space, `localleader` is backslash.
 
 In normal mode:
-| `lhs`           | Action/Note                                     | Plugin        |
-|-----------------|-------------------------------------------------|---------------|
-| `<Leader>/`     | Disable highlights of last search               |               |
-|                 | *Buffer management*                             |               |
-| `<Leader>c`     | Close the focused buffer/file                   |               |
-| `<Leader>C`     | Close the focused buffer/file without saving    |               |
-| `<Leader>bh`    | Go to previous buffer (left in the buffer line) |               |
-| `<Leader>bl`    | Go to next buffer (right in the buffer line)    |               |
-| `<Leader>b#`    | Go to last open buffer                          |               |
-|                 | *Window management*                             |               |
-| `<C-h>`         | Go to the left window                           |               |
-| `<C-j>`         | Go to the down window                           |               |
-| `<C-k>`         | Go to the up window                             |               |
-| `<C-l>`         | Go to the right window                          |               |
-| `<Leader>ws`    | Split window horizontally                       |               |
-| `<Leader>wv`    | Split window vertically                         |               |
-|                 | *File browsing*                                 | [`files.lua`](#file-related-things) |
-| `<Leader>fo`    | Toggle file system browser                      | neo-tree.nvim |
-| `<Leader>fe`    | Focus file system browser                       | neo-tree.nvim |
-|                 | *Sessions*                                      | [`sessions.lua`](#sessions) |
-| `<Leader>S`     | Restore previous session for this directory     | auto-session  |
-| `<Leader>sd`    | Delete the session for this directory           | auto-session  |
-| `<Leader>ss`    | Load a session from a list                      | auto-session  |
-| `<Leader>sx`    | Delete a session from a list                    | auto-session  |
-|                 |                                                 | [`code.lua`](#coding-related-things) |
-| `<C-b>`/`<C-f`> | Scroll documentation in auto-complete menu      | nvim-cmp        |
-| `<C-space>`     | `cmp.mapping.complete()`                        | nvim-cmp        |
-| `<C-e>`         | Abort auto-completion                           | nvim-cmp        |
-| `<CR>`          | Confirm auto-completion                         | nvim-cmp        |
-| `gnn`           | Initialize incremental selection                | nvim-treesitter |
-| `grn`           | Increment selection to node                     | nvim-treesitter |
-| `grc`           | Increment selection to surrounding scope        | nvim-treesitter |
-| `grm`           | Shrink selection to node                        | nvim-treesitter |
+| `lhs`           | Action/Note                                       | Plugin        |
+|-----------------|---------------------------------------------------|---------------|
+| `<Leader>/`     | Disable highlights of last search                 |               |
+| `<Leader>D`     | Toggle light/dark mode                            |               |
+|                 | *Buffer management*                               |               |
+| `<Leader>c`     | Close the focused buffer/file                     |               |
+| `<Leader>C`     | Close the focused buffer/file without saving      |               |
+| `<Leader>bh`    | Go to previous buffer (left in the buffer line)   |               |
+| `<Leader>bl`    | Go to next buffer (right in the buffer line)      |               |
+| `<Leader>b#`    | Go to last open buffer                            |               |
+|                 | *Window management*                               |               |
+| `<C-h>`         | Go to the left window                             |               |
+| `<C-j>`         | Go to the down window                             |               |
+| `<C-k>`         | Go to the up window                               |               |
+| `<C-l>`         | Go to the right window                            |               |
+| `<Leader>ws`    | Split window horizontally                         |               |
+| `<Leader>wv`    | Split window vertically                           |               |
+|                 | *File browsing*                                   | [`files.lua`](#file-related-things) |
+| `<Leader>o`     | Toggle file system browser                        | neo-tree.nvim  |
+| `<Leader>ff`    | Search file names, respecting .gitignore          | telescope.nvim |
+| `<Leader>fg`    | Search in files, respecting .gitignore            | telescope.nvim |
+| `<Leader>fs`    | Search string under cursor, respecting .gitignore | telescope.nvim |
+|                 | *Sessions*                                        | [`sessions.lua`](#sessions) |
+| `<Leader>S`     | Restore previous session for this directory       | auto-session  |
+| `<Leader>sd`    | Delete the session for this directory             | auto-session  |
+| `<Leader>ss`    | Load a session from a list                        | auto-session  |
+| `<Leader>sx`    | Delete a session from a list                      | auto-session  |
+|                 |                                                   | [`code.lua`](#coding-related-things) |
+| `<C-b>`/`<C-f`> | Scroll documentation in auto-complete menu        | nvim-cmp        |
+| `<C-space>`     | `cmp.mapping.complete()`                          | nvim-cmp        |
+| `<C-e>`         | Abort auto-completion                             | nvim-cmp        |
+| `<CR>`          | Confirm auto-completion                           | nvim-cmp        |
+| `gnn`           | Initialize incremental selection                  | nvim-treesitter |
+| `grn`           | Increment selection to node                       | nvim-treesitter |
+| `grc`           | Increment selection to surrounding scope          | nvim-treesitter |
+| `grm`           | Shrink selection to node                          | nvim-treesitter |
 
 ## Possible Improvements and Other To-Dos
 
