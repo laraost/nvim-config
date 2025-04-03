@@ -12,7 +12,9 @@ return {
             source_selector = { winbar = true },
         },
         keys = {
-            { "<leader>o", "<cmd>Neotree toggle position=float<cr>", desc = "Toggle File Tree" },
+            { "<leader>o", "<cmd>Neotree toggle position=float<cr>", desc = "Open file browser" },
+            { "<leader>O", "<cmd>Neotree toggle position=left<cr>", desc = "Toggle file browser" },
+            { "<leader>e", "<cmd>Neotree focus position=left<cr>", desc = "Focus file browser" },
         },
     },
     {

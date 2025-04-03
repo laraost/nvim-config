@@ -77,7 +77,9 @@ In normal mode:
 | `<Leader>ws`    | Split window horizontally                         |               |
 | `<Leader>wv`    | Split window vertically                           |               |
 |                 | *File browsing*                                   | [`files.lua`](#file-related-things) |
-| `<Leader>o`     | Toggle file system browser                        | neo-tree.nvim  |
+| `<Leader>o`     | Open file browser                                 | neo-tree.nvim  |
+| `<Leader>O`     | Toggle file browser on the left                   | neo-tree.nvim  |
+| `<Leader>e`     | Focus file browser on the left                    | neo-tree.nvim  |
 | `<Leader>ff`    | Search file names, respecting .gitignore          | telescope.nvim |
 | `<Leader>fg`    | Search in files, respecting .gitignore            | telescope.nvim |
 | `<Leader>fs`    | Search string under cursor, respecting .gitignore | telescope.nvim |
