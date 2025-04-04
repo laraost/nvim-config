@@ -35,6 +35,7 @@ vim.cmd.set("clipboard=unnamed,unnamedplus")
 
 -- The statusline
 -- Default + git branch: vim.cmd.set("statusline=%<%f\\ %h%w%m%r%=%{FugitiveStatusline()}\\ %-14.(%l,%c%V%)\\ %P")
+
 --- Format lsp-diagnostics
 -- Taken straight from https://nuxsh.is-a.dev/blog/custom-nvim-statusline.html
 local function fmt_lsp_diagnostics()
