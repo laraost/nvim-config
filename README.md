@@ -41,8 +41,10 @@ The plugin specs are located in the `lua/plugins/` directory, separated into fil
 - [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
 - [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp): auto-completion
 - [`cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp): allows `nvim-cmp` to interact with LSPs
+- [`fugitive.vim`](https://github.com/tpope/vim-fugitive): interaction with Git
 
 Setup for LSPs is in `lua/config/lsp.lua` and is not automated.
+This enables `clangd` and `rust-analyzer` with default configurations.
 
 ### UI-Related Things 
 

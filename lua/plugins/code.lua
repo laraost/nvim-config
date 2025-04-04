@@ -21,6 +21,7 @@ return {
             })
         end
     },
+    -- Plugins related to LSP support
     {
         "neovim/nvim-lspconfig",
     },
@@ -29,5 +30,11 @@ return {
     },
     {
         "hrsh7th/cmp-nvim-lsp",
+    },
+    -- Git commands
+    {
+        url = "https://tpope.io/vim/fugitive.git",
+        lazy = false,
+        config = function() end,
     }
 }
