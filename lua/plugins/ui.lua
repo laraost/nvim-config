@@ -20,6 +20,11 @@ return {
         },
         event = "VeryLazy",
     },
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+        opts = {},
+    },
     -- Buffer line
     {
         "willothy/nvim-cokeline",

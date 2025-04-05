@@ -52,6 +52,7 @@ This enables `clangd` and `rust-analyzer` with default configurations.
 - [`catppuccin/nvim`](https://github.com/catppuccin/nvim): color scheme
 - [`which-key.nvim`](https://github.com/folke/which-key.nvim): show available key mappings
 - [`nvim-cokeline`](https://github.com/willothy/nvim-cokeline): buffer line
+- [`render-markdown.nvim`](https://github.com/MeanderingProgrammer/render-markdown.nvim): pretty markdown in neovim
 
 ### Sessions
 
