@@ -95,6 +95,21 @@ In normal mode:
 | `<C-space>`     | `cmp.mapping.complete()`                          | nvim-cmp        |
 | `<C-e>`         | Abort auto-completion                             | nvim-cmp        |
 | `<CR>`          | Confirm auto-completion                           | nvim-cmp        |
+| `K`             | Show information about symbol under cursor        |                 |
+| `<Leader>ga`    | List code actions                                 |                 |
+| `<Leader>gd`    | Go to definition                                  |                 |
+| `<Leader>gD`    | Go to declaration                                 |                 |
+| `<Leader>ge`    | Show diagnostics                                  |                 |
+| `<Leader>gE`    | List all diagnostics                              | telescope       |
+| `<Leader>gi`    | Go to implementation                              |                 |
+| `<Leader>gn`    | Go to next diagnostic                             |                 |
+| `<Leader>gN`    | Go to previous diagnostic                         |                 |
+| `<Leader>go`    | Go to type definition of symbol under cursor      |                 |
+| `<Leader>gr`    | List references to symbol under cursor            | telescope       |
+| `<Leader>gs`    | Signature help                                    |                 |
+| `<Leader>gS`    | List symbols defined in current file              | telescope       |
+| `<F2>`          | Rename symbol under cursor                        |                 |
+| `<F3>`          | Format                                            |                 |
 | `gnn`           | Initialize incremental selection                  | nvim-treesitter |
 | `grn`           | Increment selection to node                       | nvim-treesitter |
 | `grc`           | Increment selection to surrounding scope          | nvim-treesitter |
@@ -109,7 +124,6 @@ The functionality around these mappings might not interact well with the (Neo)Vi
 
 ## Possible Improvements and Other To-Dos
 
-- [ ] Document LSP key mappings.
 - [ ] LSP related windows have no border. Maybe in general hovering windows could use a border.
 - [ ] Use something like [auto-dark-mode](https://github.com/f-person/auto-dark-mode.nvim) to switch light/dark based on system settings.
 - [ ] (Neo)Vim's builtin tabs don't work well with this setup. They feel somewhat janky in combination with `<Leader>c`.

@@ -73,3 +73,33 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize -1<cr>", { desc = "Decrease height"
 
 -- Search
 vim.keymap.set("n", "<Leader>/", "<cmd>noh<cr>", { desc = "Clear search highlighting" })
+
+-- Key maps for LSPs, enabled when an LSP is attached
+vim.api.nvim_create_autocmd("LspAttach", {
+  desc = "LSP actions",
+  callback = function(event)
+    local opts = function(desc)
+        return {
+            buffer = event.buf,
+            desc = desc,
+        }
+    end
+
+    local ts_builtin = require("telescope.builtin")
+    vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts("Hover"))
+    vim.keymap.set("n", "<Leader>ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts("List code actions"))
+    vim.keymap.set("n", "<Leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts("Go to definition"))
+    vim.keymap.set("n", "<Leader>gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts("Go to declaration"))
+    vim.keymap.set("n", "<Leader>ge", "<cmd>lua vim.diagnostic.open_float()<cr>", opts("Show diagnostics")) 
+    vim.keymap.set("n", "<Leader>gE", ts_builtin.diagnostics, opts("List all diagnostics"))
+    vim.keymap.set("n", "<Leader>gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts("Go to implementation"))
+    vim.keymap.set("n", "<Leader>gn", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts("Go to next diagnostic"))
+    vim.keymap.set("n", "<Leader>gN", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts("Go to previous diagnostic"))
+    vim.keymap.set("n", "<Leader>go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts("Go to type definition"))
+    vim.keymap.set("n", "<Leader>gr", ts_builtin.lsp_references, opts("List references"))
+    vim.keymap.set("n", "<Leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts("Signature help"))
+    vim.keymap.set("n", "<Leader>gS", ts_builtin.lsp_document_symbols, opts("List file symbols"))
+    vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts("Rename"))
+    vim.keymap.set({"n", "x"}, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts("Format"))
+  end,
+})

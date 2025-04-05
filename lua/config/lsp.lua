@@ -7,26 +7,6 @@ lspconfig_defaults.capabilities = vim.tbl_deep_extend(
     require("cmp_nvim_lsp").default_capabilities()
 )
 
--- Enable key maps when an LSP is attached
-vim.api.nvim_create_autocmd('LspAttach', {
-  desc = 'LSP actions',
-  callback = function(event)
-    local opts = {buffer = event.buf}
-
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    vim.keymap.set('n', '<Leader>gh', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
-    vim.keymap.set('n', '<Leader>gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    vim.keymap.set('n', '<Leader>gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', '<Leader>gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    vim.keymap.set('n', '<Leader>go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', '<Leader>gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', '<Leader>gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-  end,
-})
-
 -- Configure and enable LSPs
 local lspconfig = require("lspconfig")
 lspconfig.rust_analyzer.setup({})
@@ -35,7 +15,6 @@ lspconfig.clangd.setup({})
 
 -- Configure auto-completion
 local cmp = require("cmp")
-
 cmp.setup({
     sources = {
         { name = "nvim_lsp" },
@@ -57,3 +36,23 @@ cmp.setup({
         documentation = cmp.config.window.bordered()
     }
 })
+
+-- Configure appearance
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '✘',
+            [vim.diagnostic.severity.WARN] = '▲',
+            [vim.diagnostic.severity.HINT] = '⚑',
+            [vim.diagnostic.severity.INFO] = '»',
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = 'DiagnosticVirtualTextError',
+            [vim.diagnostic.severity.WARN] =  'DiagnosticVirtualTextWarn',
+            [vim.diagnostic.severity.HINT] =  'DiagnosticVirtualTextHint',
+            [vim.diagnostic.severity.INFO] =  'DiagnosticVirtualTextInfo',
+        },
+    },
+    float = { border = "rounded" },
+})
+
