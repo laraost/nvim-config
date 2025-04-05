@@ -36,5 +36,11 @@ return {
         url = "https://tpope.io/vim/fugitive.git",
         lazy = false,
         config = function() end,
-    }
+    },
+    -- Automatically close parentheses, brackets etc.
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
 }
