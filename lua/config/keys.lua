@@ -50,6 +50,9 @@ end
 vim.keymap.set("n", close_mapping, function() close_buffer(false) end, {desc = "Close buffer"})
 vim.keymap.set("n", force_close_mapping, function() close_buffer(true) end, {desc = "Close buffer without saving"})
 
+-- Create a new file
+vim.keymap.set("n", "<Leader>n", "<cmd>enew<cr>", {desc = "Open a new file"})
+
 -- Navigate in buffers; alternatives to `:bp`, `:bn` and the like
 vim.keymap.set("n", "<Leader>h", "<cmd>bp<cr>", {desc = "Go to previous buffer"})
 vim.keymap.set("n", "<Leader>l", "<cmd>bn<cr>", {desc = "Go to next buffer"})

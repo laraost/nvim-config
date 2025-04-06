@@ -70,6 +70,7 @@ In normal mode:
 |                 | *Buffer management*                               |               |
 | `<Leader>c`     | Close the focused buffer/file                     |               |
 | `<Leader>C`     | Close the focused buffer/file without saving      |               |
+| `<Leader>n`     | Open a new file                                   |               |
 | `<Leader>h`     | Go to previous buffer (left in the buffer line)   |               |
 | `<Leader>l`     | Go to next buffer (right in the buffer line)      |               |
 | `<Leader>#`     | Go to last open buffer                            |               |
