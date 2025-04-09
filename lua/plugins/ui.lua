@@ -12,6 +12,10 @@ return {
             },
         }
     },
+    {
+        "sainnhe/sonokai",
+        priority = 1000
+    },
     -- Show available key mappings
     {
         "folke/which-key.nvim",

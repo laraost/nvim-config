@@ -5,8 +5,25 @@ vim.cmd.set("expandtab")
 
 -- All the colors of the rainbow and how to use them
 vim.cmd.set("termguicolors")
-vim.cmd.colorscheme("catppuccin")
+local set_colorscheme = function()
+    if vim.o.background == "light" then
+        vim.cmd.colorscheme("catppuccin")
+    else
+        vim.cmd.colorscheme("sonokai")
+    end
+    vim.cmd("mode")
+end
+vim.api.nvim_create_autocmd(
+    { "OptionSet" },
+    {
+        pattern = "background",
+        callback = function(ev)
+            set_colorscheme()
+        end
+    }
+)
 vim.cmd.set("background=light")
+set_colorscheme()
 
 -- Line numbering
 vim.cmd.set("number relativenumber")
