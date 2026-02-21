@@ -1,13 +1,15 @@
 -- Nice tabbing
-vim.cmd.set("tabstop=4 softtabstop=0")
-vim.cmd.set("shiftwidth=4")
+vim.cmd.set("tabstop=3 softtabstop=0")
+vim.cmd.set("shiftwidth=3")
 vim.cmd.set("expandtab")
+
+vim.o.winborder = 'rounded'
 
 -- All the colors of the rainbow and how to use them
 vim.cmd.set("termguicolors")
 local set_colorscheme = function()
     if vim.o.background == "light" then
-        vim.cmd.colorscheme("catppuccin")
+        vim.cmd.colorscheme("alabaster")
     else
         vim.cmd.colorscheme("sonokai")
     end

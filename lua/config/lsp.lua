@@ -1,17 +1,11 @@
 vim.opt.signcolumn = "yes"
 
-local lspconfig_defaults = require("lspconfig").util.default_config
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-    'force',
-    lspconfig_defaults.capabilities,
-    require("cmp_nvim_lsp").default_capabilities()
-)
-
 -- Configure and enable LSPs
-local lspconfig = require("lspconfig")
-lspconfig.rust_analyzer.setup({})
-lspconfig.clangd.setup({})
--- lspconfig.lua_ls.setup({}) -- lua-language-server is not correctly installed right now
+vim.lsp.enable('rust_analyzer')
+vim.lsp.config('clangd', {
+    cmd = { 'clangd', '--header-insertion=never'}
+})
+vim.lsp.enable('clangd')
 
 -- Configure auto-completion
 local cmp = require("cmp")

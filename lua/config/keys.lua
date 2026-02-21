@@ -29,22 +29,21 @@ local close_buffer = function(force)
     end
     local delete_buf
     if force then
-            delete_buf = function() vim.cmd.bdelete("!#") end
+            delete_buf = function() vim.cmd.bdelete{"#", bang=true} end
     else
             delete_buf = function() vim.cmd.bdelete("#") end
     end
-    local cokeline = require("cokeline.mappings")
     if #get_listed_bufs() == 1 then
         -- There is only one buffer to close, so make a new one first.
         local current_buffer = vim.api.nvim_win_get_buf(0)
         vim.cmd.enew()
         if vim.api.nvim_win_get_buf(0) ~= current_buffer then
-            vim.cmd.bdelete("#")
+            delete_buf(force)
         end
     else
         -- Focus the previous buffer in the bufferline, then delete.
-        cokeline.by_step("focus", -1)
-        vim.cmd.bdelete("#")
+        vim.cmd.bprevious()
+        delete_buf(force)
     end
 end
 vim.keymap.set("n", close_mapping, function() close_buffer(false) end, {desc = "Close buffer"})
@@ -53,10 +52,10 @@ vim.keymap.set("n", force_close_mapping, function() close_buffer(true) end, {des
 -- Create a new file
 vim.keymap.set("n", "<Leader>n", "<cmd>enew<cr>", {desc = "Open a new file"})
 
--- Navigate in buffers; alternatives to `:bp`, `:bn` and the like
-vim.keymap.set("n", "<Leader>h", "<cmd>bp<cr>", {desc = "Go to previous buffer"})
-vim.keymap.set("n", "<Leader>l", "<cmd>bn<cr>", {desc = "Go to next buffer"})
+-- Buffer navigation and opening in splits
 vim.keymap.set("n", "<Leader>#", "<cmd>b#<cr>", {desc = "Go to last open buffer"})
+vim.keymap.set("n", "<Leader>bs", ":sb<space>", {desc = "Open buffer in new horizontal split"})
+vim.keymap.set("n", "<Leader>bv", ":vert sb<space>", {desc = "Open buffer in new vertical split"})
  
 -- Navigate through windows; alternatives to `<C-w>h` etc.
 vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to the left window" })
@@ -67,12 +66,20 @@ vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to the up window"
 -- Split windows; alternatives to `<C-w>s` and `<C-w>v`
 vim.keymap.set("n", "<Leader>ws", "<cmd>split<cr>", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<Leader>wv", "<cmd>vsplit<cr>", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>wc", "<cmd>close<cr>", { desc = "Close the current split" })
 
 -- Resizing windows; alternatives to `<C-w><gt>` etc.
 vim.keymap.set("n", "<C-Right>", "<cmd>vert res +1<cr>", { desc = "Increase width" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vert res -1<cr>", { desc = "Decrease width" })
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +1<cr>", { desc = "Increase height" })
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -1<cr>", { desc = "Decrease height" })
+
+-- Managing tabpages
+vim.keymap.set("n", "<Leader>t", "<cmd>tabnew<cr>", {desc = "Open a new tab"})
+vim.keymap.set("n", "<Leader>T", "<cmd>tabclose<cr>", {desc = "Close the current tab"})
+vim.keymap.set("n", "<Leader>h", "<cmd>tabprevious<cr>", {desc = "Go to previous tab"})
+vim.keymap.set("n", "<Leader>l", "<cmd>tabnext<cr>", {desc = "Go to next tab"})
+
 
 -- Search
 vim.keymap.set("n", "<Leader>/", "<cmd>noh<cr>", { desc = "Clear search highlighting" })
