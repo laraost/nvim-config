@@ -15,6 +15,10 @@
 - [`sonokai`](https://github.com/sainnhe/sonokai): dark colorscheme
 - [`alabaster.nvim`](https://github.com/p00f/alabaster.nvim): light colorscheme
 
+## Colors
+
+Includes a dark colorscheme that uses sonokai colors in alabaster.nvim; see `colors/sonobaster.lua`.
+
 ## Key Mapping
 
 `leader` is space, `localleader` is backslash.

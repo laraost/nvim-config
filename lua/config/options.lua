@@ -11,7 +11,7 @@ local set_colorscheme = function()
     if vim.o.background == "light" then
         vim.cmd.colorscheme("alabaster")
     else
-        vim.cmd.colorscheme("sonokai")
+        vim.cmd.colorscheme("sonobaster")
     end
     vim.cmd("mode")
 end
@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd(
         end
     }
 )
-vim.cmd.set("background=light")
+vim.cmd.set("background=dark")
 set_colorscheme()
 
 -- Line numbering
