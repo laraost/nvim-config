@@ -1,5 +1,5 @@
 --[[
-Sonokai colors in dark-mode alabaster.nvim
+Sonokai colors transplanted onto dark-mode alabaster.nvim
 
 ================================================================================
 alabaster.nvim: (https://github.com/p00f/alabaster.nvim)
@@ -51,7 +51,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
 --]]
 
 vim.cmd("hi clear")
@@ -59,7 +58,7 @@ if vim.fn.exists("syntax_on") == 1 then
     vim.cmd("syntax reset")
 end
 
-vim.g.colors_name = "alabaster"
+vim.g.colors_name = "sonobaster"
 
 local theme
 -- terminal colors
@@ -176,8 +175,8 @@ theme = {
   TabLineFill = { bg = statusline },
   TabLineSel = { bg = statusline, fg = ansi.blue },
   Title = { fg = const_fg },
-  Visual = { bg = "#293334" },
-  VisualNOS = { bg = "#293334" },
+  Visual = { bg = "#394634"},
+  VisualNOS = { bg = "#394634" },
   WarningMsg = { fg = "#e1ad4c" },
   WildMenu = { bg = "#354c50" },
   WinBar = { bg = bg, fg = ansi.white, bold = true },
