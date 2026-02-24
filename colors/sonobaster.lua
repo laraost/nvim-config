@@ -82,7 +82,7 @@ vim.g.terminal_color_15 = "#ffffff"
 -- colors
 local bg = "#2c2e34"
 local fg = "#e2e2e3"
-local punct_fg = "#7f8490"
+local punct_fg = "#afb5c1"
 local def_fg = "#71ade7"
 local const_fg = "#85d3f2"
 local active = "#e7c664"
@@ -145,7 +145,7 @@ theme = {
   SignColumn = {},
   IncSearch = { bg = ansi.yellow, fg = bg },
   -- Substitute   { }, -- |:substitute| replacement text highlighting
-  LineNr = { fg = "#5c5c5c" },
+  LineNr = { fg = "#9c9c9c" },
   CursorLineNr = { fg = ansi.blue, bold = 1 },
   MatchParen = { underline = 1, sp = active },
   -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
