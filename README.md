@@ -2,22 +2,17 @@
 
 ## Plugins
 
-- [`lazy.nvim`](https://github.com/folke/lazy.nvim): pluging management
-- [`neo-tree.nvim`](https://github.com/nvim-neo-tree/neo-tree.nvim): file system browsing
-- [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim): search (in) files. Does not search in files ignored via `.gitignore`.
+- [`lazy.nvim`](https://github.com/folke/lazy.nvim): pluging management; automatic updates are disabled
+- [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim): searching (in) files.
 - [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
 - [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
 - [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp): auto-completion
 - [`cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp): allows `nvim-cmp` to interact with LSPs
-- [`fugitive.vim`](https://github.com/tpope/vim-fugitive): interaction with Git
-- [`nvim-autopairs`](https://gihub.com/windwp/nvim-autopairs): auto-close parentheses and such
-- [`which-key.nvim`](https://github.com/folke/which-key.nvim): show available key mappings
-- [`sonokai`](https://github.com/sainnhe/sonokai): dark colorscheme
 - [`alabaster.nvim`](https://github.com/p00f/alabaster.nvim): light colorscheme
 
 ## Colors
 
-Includes a dark colorscheme that uses sonokai colors in alabaster.nvim; see `colors/sonobaster.lua`.
+Includes a custom dark colorscheme that uses [sonokai](https://github.com/sainnhe/sonokai) colors in alabaster.nvim; see `colors/sonobaster.lua`.
 
 ## Key Mapping
 
@@ -31,16 +26,7 @@ In normal mode:
 |                 | *Buffer management*                               |                 |
 | `<Leader>c`     | Close the focused buffer/file                     |                 |
 | `<Leader>C`     | Close the focused buffer/file without saving      |                 |
-| `<Leader>n`     | Open a new file                                   |                 |
-| `<Leader>#`     | Go to last open buffer                            |                 |
-| `<Leader>bs`    | Shortcut for `:sb `                               |                 |
-| `<Leader>bs`    | Shortcut for `:vert sb `                          |                 |
-|                 | *Tabs*                                            |                 |
-| `<Leader>t`     | Open a new tab                                    |                 |
-| `<Leader>T`     | Close the current tab                             |                 |
-| `<Leader>h`     | Go to previous tab                                |                 |
-| `<Leader>l`     | Go to next tab                                    |                 |
-|                 | *Window management*                               |                 |
+|                 | *Windows and Tabs*                                |                 |
 | `<C-h>`         | Go to the left window                             |                 |
 | `<C-j>`         | Go to the down window                             |                 |
 | `<C-k>`         | Go to the up window                               |                 |
@@ -48,11 +34,12 @@ In normal mode:
 | `<Leader>ws`    | Split window horizontally                         |                 |
 | `<Leader>wv`    | Split window vertically                           |                 |
 | `<Leader>wc`    | Close the current split                           |                 |
-|                 | *File browsing*                                   |                 |
-| `<Leader>o`     | Open file browser                                 | neo-tree.nvim   |
+| `<Leader>t`     | Open a new tab                                    |                 |
+|                 | *Fuzzy Finding*                                   |                 |
 | `<Leader>ff`    | Search file names, respecting .gitignore          | telescope.nvim  |
 | `<Leader>fg`    | Search in files, respecting .gitignore            | telescope.nvim  |
 | `<Leader>fs`    | Search string under cursor, respecting .gitignore | telescope.nvim  |
+|                 | *Autocomplete*                                    |                 |
 | `<C-b>`/`<C-f`> | Scroll documentation in auto-complete menu        | nvim-cmp        |
 | `<C-space>`     | `cmp.mapping.complete()`                          | nvim-cmp        |
 | `<C-e>`         | Abort auto-completion                             | nvim-cmp        |

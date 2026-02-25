@@ -49,14 +49,6 @@ end
 vim.keymap.set("n", close_mapping, function() close_buffer(false) end, {desc = "Close buffer"})
 vim.keymap.set("n", force_close_mapping, function() close_buffer(true) end, {desc = "Close buffer without saving"})
 
--- Create a new file
-vim.keymap.set("n", "<Leader>n", "<cmd>enew<cr>", {desc = "Open a new file"})
-
--- Buffer navigation and opening in splits
-vim.keymap.set("n", "<Leader>#", "<cmd>b#<cr>", {desc = "Go to last open buffer"})
-vim.keymap.set("n", "<Leader>bs", ":sb<space>", {desc = "Open buffer in new horizontal split"})
-vim.keymap.set("n", "<Leader>bv", ":vert sb<space>", {desc = "Open buffer in new vertical split"})
- 
 -- Navigate through windows; alternatives to `<C-w>h` etc.
 vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to the left window" })
 vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to the right window" })
@@ -76,9 +68,6 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize -1<cr>", { desc = "Decrease height"
 
 -- Managing tabpages
 vim.keymap.set("n", "<Leader>t", "<cmd>tabnew<cr>", {desc = "Open a new tab"})
-vim.keymap.set("n", "<Leader>T", "<cmd>tabclose<cr>", {desc = "Close the current tab"})
-vim.keymap.set("n", "<Leader>h", "<cmd>tabprevious<cr>", {desc = "Go to previous tab"})
-vim.keymap.set("n", "<Leader>l", "<cmd>tabnext<cr>", {desc = "Go to next tab"})
 
 
 -- Search
