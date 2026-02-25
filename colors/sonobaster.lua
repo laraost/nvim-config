@@ -87,7 +87,7 @@ local def_fg = "#71ade7"
 local const_fg = "#85d3f2"
 local active = "#e7c664"
 local string_fg = "#a7df78"
-local darker_fg = "#7f8490"
+local darker_fg = "#afb5c1"
 local diffadd = "#9ed072"
 local diffdelete = "#fc5d7c"
 local diffchange = "#f39660"
@@ -135,12 +135,12 @@ theme = {
   DiffDelete = { bg = "#462c32", fg = "#f85149" },
   DiffText = { fg = "#341a00", bg = "#fff987" },
   DiffChange = { bg = "#341a00", fg = "#e3b341" },
-  EndOfBuffer = { fg = "#354c50" },
+  EndOfBuffer = { fg = "#355c50" },
   -- TermCursor   { }, -- cursor in a focused terminal
   TermCursorNC = { fg = bg, bg = fg },
   ErrorMsg = { fg = error, bg = mistake.bg },
   VertSplit = { fg = "#2b3d40" },
-  Folded = { bg = "#182325", fg = "#7f8490" },
+  Folded = { bg = "#182325", fg = darker_fg },
   FoldColumn = { bg = bg, fg = "#4d4d4d" },
   SignColumn = {},
   IncSearch = { bg = ansi.yellow, fg = bg },
@@ -158,12 +158,12 @@ theme = {
   -- NormalNC     { }, -- normal text in non-current windows
   FloatBorder = floatborder,
   Pmenu = { bg = pmenu_bg },
-  PmenuSel = { bg = "#354c50" },
+  PmenuSel = { bg = "#355c50" },
   PmenuSbar = { bg = "#212f31" },
   PmenuThumb = { bg = "#47666b" },
   Question = { fg = diffadd },
   QuickFixLine = { bg = "#182325" },
-  Search = { bg = "#354c50" },
+  Search = { bg = "#355c50" },
   SpecialKey = { fg = ansi.cyan },
   SpellBad = { undercurl = 1, sp = ansi.red },
   SpellCap = { undercurl = 1, sp = ansi.blue },
@@ -171,16 +171,16 @@ theme = {
   SpellRare = { undercurl = 1, sp = ansi.magenta },
   StatusLine = { bg = statusline, fg = fg },
   StatusLineNC = { bg = statusline, fg = "#9f9f9f" },
-  TabLine = { bg = statusline, fg = "#7f8490" },
+  TabLine = { bg = statusline, fg = darker_fg },
   TabLineFill = { bg = statusline },
   TabLineSel = { bg = statusline, fg = ansi.blue },
   Title = { fg = const_fg },
   Visual = { bg = "#394634"},
   VisualNOS = { bg = "#394634" },
   WarningMsg = { fg = "#e1ad4c" },
-  WildMenu = { bg = "#354c50" },
+  WildMenu = { bg = "#355c50" },
   WinBar = { bg = bg, fg = ansi.white, bold = true },
-  WinBarNC = { bg = bg, fg = "#7f8490" },
+  WinBarNC = { bg = bg, fg = darker_fg },
 
   --- SYNTAX I: TS groups link to these
   Constant = { fg = const_fg },
